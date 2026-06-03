@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- 宣告文件類型為 HTML5 -->
+<html lang="en">
+
+<head>
+    <!-- head 區塊：放 metadata 與樣式 -->
+    <meta charset="UTF-8">
+    <!-- 設定字元編碼為 UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 設定響應式視窗，讓頁面在行動裝置上縮放適當 -->
+    <title>Document</title>
+    <!-- 網頁標題，會顯示在分頁上 -->
+    <style>
+        /* 樣式：.box 容器 */
+        .box {
+            width: 600px; /* 設定寬度為 600px */
+            height: 600px; /* 設定高度為 600px */
+            background-color: lightblue; /* 背景顏色為淺藍 */
+            margin: auto; /* 水平置中 */
+            border-radius: 30px; /* 圓角半徑 30px */
+        }
+
+        /* 樣式：.container-input 容器 */
+        .container-input {
+            width: 600px; /* 寬度 600px */
+            height: 300px; /* 高度 300px */
+            background-color: lightyellow; /* 背景淺黃 */
+            margin: auto; /* 水平置中 */
+            margin-top: 20px; /* 上方間距 20px */
+
+            display: flex; /* 使用 flex 佈局 */
+            justify-content: space-around; /* 子元素左右等間距 */
+            align-items: center; /* 子元素垂直置中 */
+
+             border-radius: 30px; /* 圓角半徑 30px */
+        }
+
+        /* 樣式：每個小方塊 */
+        .item{
+            width: 150px; /* 小方塊寬度 150px */
+            height: 150px; /* 小方塊高度 150px */
+            border-radius: 50px; /* 圓角半徑 50px */
+        }
+
+        /* 第一個小方塊的背景色 */
+        .item1{
+            background-color: lightblue; /* 淺藍 */
+        }
+
+        /* 第二個小方塊的背景色 */
+        .item2{
+            background-color: lightgreen; /* 淺綠 */
+        }
+
+        /* 第三個小方塊的背景色 */
+        .item3{
+            background-color: lightpink; /* 淺粉 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 主視覺盒子，會被 JavaScript 控制背景顏色 -->
+    <div class="box">
+
+    </div>
+
+    <!-- 操作按鈕區（用小方塊模擬按鈕） -->
+    <div class="container-input">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+    </div>
+<script>
+// JavaScript 程式開始：以下為步驟註解說明
+// 1. bind：綁定 DOM 元素到變數，方便在程式中操作
+// 綁定 box：選取 class 為 .box 的元素，代表主視覺容器
+let box=document.querySelector('.box');
+// 綁定 inputRed：選取第一個小方塊（.item1），當作紅色按鈕
+let inputRed=document.querySelector('.item1');
+// 綁定 inputGreen：選取第二個小方塊（.item2），當作綠色按鈕
+let inputGreen=document.querySelector('.item2');
+// 綁定 inputBlue：選取第三個小方塊（.item3），當作藍色按鈕
+let inputBlue=document.querySelector('.item3');
+
+
+// 2. 事件監聽前的 debug：印出變數，確認選取成功（類似 PHP 的 print_r）
+console.log("Hello JS"); /* 印出測試字串 */
+console.log(box); /* 顯示 box 元素的物件資訊 */
+console.log(inputRed); /* 顯示 inputRed 元素資訊 */
+console.log(inputGreen); /* 顯示 inputGreen 元素資訊 */
+console.log(inputBlue); /* 顯示 inputBlue 元素資訊 */
+
+// 3. action：為每個小方塊新增點擊事件，點擊後改變 box 的背景色
+
+// 當紅色按鈕被點擊時：執行匿名函式
+inputRed.addEventListener('click',function(){
+    console.log('inputRed clicked'); /* 在 console 印出按鈕被點擊訊息 */
+    box.style.backgroundColor='lightblue'; /* 將 box 背景設為淺藍 */
+});
+
+// 當綠色按鈕被點擊時：執行匿名函式
+inputGreen.addEventListener('click',function(){
+    console.log('inputGreen clicked'); /* 在 console 印出按鈕被點擊訊息 */
+    box.style.backgroundColor='lightgreen'; /* 將 box 背景設為淺綠 */
+});
+// 當藍色按鈕被點擊時：執行匿名函式
+inputBlue.addEventListener('click',function(){
+    console.log('inputBlue clicked'); /* 在 console 印出按鈕被點擊訊息 */
+    box.style.backgroundColor='lightpink'; /* 將 box 背景設為淺粉 */
+});
+
+</script>
+
+</body>
+
+</html>
